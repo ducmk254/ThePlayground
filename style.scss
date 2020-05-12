@@ -1,0 +1,25 @@
+$primary-color: tomato;
+@mixin flexboxRow{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @content
+}
+@mixin flexbox($align: center, $justify: center, $wrap: wrap,$flex-direc: column,$flex-grow: 0){
+    align-items: $align;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+    flex-direction: $flex-direc;
+    flex-grow: $flex-grow;
+}
+.header{
+    height: 200px;
+    &__logo{
+        background-color: $primary-color;
+        height: 100%;
+        width: 1200px;
+        padding: 100px 200px;
+        @include flexbox(center, center,wrap, row,1);
+    }
+}
+

@@ -1,0 +1,16 @@
+.header {
+  height: 200px;
+}
+.header__logo {
+  background-color: tomato;
+  height: 100%;
+  width: 1200px;
+  padding: 100px 200px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+/*# sourceMappingURL=style.css.map */
