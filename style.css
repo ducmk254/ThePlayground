@@ -1,16 +1,27 @@
-.header {
-  height: 200px;
+@charset "UTF-8";
+html {
+  font-size: 62.5%;
 }
-.header__logo {
-  background-color: tomato;
-  height: 100%;
-  width: 1200px;
-  padding: 100px 200px;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-  flex-grow: 1;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+img {
+  /* fix tránh việc kích cỡ ảnh to hơn thẻ cha dẫn tới việc tràn box
+  => set cho nó max chỉ bằng kích cỡ thẻ cha chứa nó */
+  display: block;
+  /* set đc width và height */
+  max-width: 100%;
+}
+
+.box {
+  width: 10rem;
+  height: 10rem;
+  border: 2rem solid red;
 }
 
 /*# sourceMappingURL=style.css.map */
