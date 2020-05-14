@@ -434,6 +434,7 @@ body{
             }
         }
         &-btn{
+            cursor: pointer;
             outline: none;
             padding: 16px 50px;
             font-size: 2rem;
@@ -450,5 +451,31 @@ body{
         }
     }
     
+}
+
+.partnes{
+    @include flexbox(column, center, center);
+    h2{
+        font-size: 4rem;
+        color: $text-color;
+        padding:  0 256px 70px 256px;
+        font-weight: bold;
+        text-align: center;
+        border-bottom: 2px solid $text-color;
+    }
+    &__list{
+        @include flexbox(row, center, space-around);
+        
+    }
+    &__item{
+
+        padding: 65px 55px 96px 55px;
+        &-link {
+            width:100%;
+            height: 100%;
+        }
+
+    }
+    margin-bottom: 65px;
 }
 
