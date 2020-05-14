@@ -1,6 +1,41 @@
+/* variable and function, mixin ... */
+$primary-color: #ffc87a;
+
+$text-color: #1a2b5f;
+$second-text-color: #7d86a4;
+
+@mixin flexbox($dir: row,$align: center, $justify: center, $wrap: nowrap){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 html{
     font-size: 62.5%; // 1rem = 10px;
+    color: $primary-color;
+    font-family: poppins;
 
+}
+a{
+    color: $text-color;
+    text-decoration: none;
 }
 *,
 *::before,
@@ -20,3 +55,203 @@ img{ /* fix tránh việc kích cỡ ảnh to hơn thẻ cha dẫn tới việc 
     border: 2rem solid red;
 
 }
+body{
+    background-color: #e1e5f6;
+}
+
+.wrapper{
+    max-width: 1440px;
+    margin: 0 atuo;
+}
+.container{
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+}
+.header{
+    margin-top: 40px;
+    font-size: 1.6rem;
+    
+    &__nav{
+        @include flexbox(row,center, space-between );
+        &-logo{
+            font-size: 3.5rem;
+            font-weight: bold;
+            span{
+                color: $primary-color;
+            }
+        }
+        &-list{
+            @include flexbox(row, space-between, center);
+
+        }
+        &-item{
+            margin-left: 50px;
+            padding: 10px 20px;
+            cursor: pointer;
+            a{
+                transition: border 3s linear color 3s linear;
+                -webkit-transition: border 3s linear color 3s linear;
+                -moz-transition: border 3s linear color 3s linear;
+                -ms-transition: border 3s linear color 3s linear;
+                -o-transition: border 3s linear color 3s linear;
+
+                &:hover{
+                    color: $primary-color;
+                    transition: all 0.3s;
+                    -webkit-transition: all 0.3s;
+                    -moz-transition: all 0.3s;
+                    -ms-transition: all 0.3s;
+                    -o-transition: all 0.3s;
+                }
+            }
+            &:last-child{
+                border: 1px solid $text-color;
+                border-radius: 21px;
+                -webkit-border-radius: 21px;
+                -moz-border-radius: 21px;
+                -ms-border-radius: 21px;
+                -o-border-radius: 21px;
+                &:hover{
+                    border: 1px solid $primary-color;
+                    transition: all 0.3s;
+                    -webkit-transition: all 0.3s;
+                    -moz-transition: all 0.3s;
+                    -ms-transition: all 0.3s;
+                    -o-transition: all 0.3s;
+                    a{
+                        color: $primary-color;
+                        transition: all 0.3s;
+                        -webkit-transition: all 0.3s;
+                        -moz-transition: all 0.3s;
+                        -ms-transition: all 0.3s;
+                        -o-transition: all 0.3s;
+                    }
+                }
+                    
+            }
+            &:first-child::after{
+                content: '';
+                display: block;
+            }
+        }
+    }
+
+
+    &__banner{
+        @include flexbox(column, center, center);
+        margin-top: 136px;
+        margin-bottom: 181px;
+        color: $text-color;
+        h1{
+            font-size: 8.4rem;
+            font-weight: bold;
+            margin-bottom: 36px;
+        }
+        p{
+            font-size: 3.7rem;
+            text-align: center;
+            color: $second-text-color;
+            margin-bottom: 45px;
+        }
+        .header__nav--login{
+            font-weight: 500;
+            padding: 18px 36px;
+            border: 1px solid $text-color;
+            border-radius: 36px;
+            -webkit-border-radius: 36px;
+            -moz-border-radius: 36px;
+            -ms-border-radius: 36px;
+            -o-border-radius: 36px;
+            &:hover{
+                
+                border: 1px solid $primary-color;
+                a{
+                    color: $primary-color;
+                }
+            }
+        }
+        .header__nav--login:last-child{
+            border: 1px solid #ffea7b; // #ffc97a
+            background-image: linear-gradient(#ffea7b,#ffc97a);;
+            &:hover{
+                
+                border: 1px solid $primary-color;
+                a{
+                    color: $text-color;
+                }
+            }
+        }
+    }
+
+    &__slide{
+        .header__slide-list{
+            margin-bottom: 180px;
+            @include flexbox(row, flex-start, space-around);
+        }
+        &-item{
+            text-align: left;
+            width: 270px;
+            height: 370px;
+            border: none;
+            border-radius: 30px;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            -ms-border-radius: 30px;
+            -o-border-radius: 30px;
+            
+
+            background-color: white;
+            @include flexbox(column, center-start, flex-start);
+            &:nth-child(1){
+                box-shadow: 0px 60px rgba(255, 242, 247,0.2);
+            }
+            &:nth-child(2){
+                box-shadow: 0px 60px rgba(255, 237, 236,0.2);
+            }
+            &:nth-child(3){
+                box-shadow: 0px 60px rgba(239, 242, 255,0.2);
+            }
+            &:nth-child(4){
+                box-shadow: 0px 60px rgba(255, 248, 237,0.2);
+            }
+
+            &-box{
+                padding: 0px 30px;
+                img{
+                    border: 0px solid white;
+                    border-radius: 30px;
+                    -webkit-border-radius: 30px;
+                    -moz-border-radius: 30px;
+                    -ms-border-radius: 30px;
+                    -o-border-radius: 30px;
+    
+                    width: 210px;
+                    height: 230px;
+                    margin-bottom: 40px;
+                }
+                h2{
+                    font-size: 2.2rem;
+                    color: $text-color;
+                    font-weight: 500;
+                    margin-bottom: 30px;
+                    text-indent: 5px;
+                }
+                a{
+                    color: $second-text-color;
+                    text-align: left;
+                    padding: 0px 5px;
+                    font-size: 1.4rem;
+                }
+                &-arow{
+                    padding-left: 20px;
+                }
+            }
+            
+        }           
+
+    }
+            
+}
+        
+
